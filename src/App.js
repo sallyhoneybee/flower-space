@@ -6,7 +6,12 @@ import {
   Environment,
   Float,
   Sparkles,
+  PositionalAudio,
 } from "@react-three/drei";
+
+import { useEffect, useRef } from "react";
+import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
+
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/Row";
@@ -14,9 +19,14 @@ import Col from "react-bootstrap/Col";
 import { Flower } from "./models/Flower";
 import { Lavender } from "./models/Lavender";
 import { FlowerBloom } from "./models/FlowerBloom";
-import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
 
 function App() {
+  const music = useRef();
+
+  useEffect(() => {
+    console.log(music);
+  });
+
   return (
     <>
       <color attach="background" args={["#ffffff"]}></color>
@@ -40,9 +50,9 @@ function App() {
         <Scroll>
           {/* top */}
           <Float
-            speed={0.5} // Animation speed, defaults to 1
+            speed={0.6} // Animation speed, defaults to 1
             rotationIntensity={2} // XYZ rotation intensity, defaults to 1
-            floatIntensity={0.2} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+            floatIntensity={0.5} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
             floatingRange={[1, 1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
           >
             <FlowerBloom scale={0.4} position={[-2, -2, 1]} />
@@ -58,7 +68,7 @@ function App() {
 
           {/* middle */}
           <Float
-            speed={0.3}
+            speed={0.6}
             rotationIntensity={0.5}
             floatIntensity={0.2}
             floatingRange={[0.1, 0.11]} // R
@@ -115,6 +125,16 @@ function App() {
             opacity={1}
             scale={[30, 100, 20]}
           ></Sparkles>
+
+          <group position={[0, 0, 0]}>
+            <PositionalAudio
+              ref={music}
+              autoplay
+              loop
+              url={Sound}
+              distance={1.2}
+            />
+          </group>
         </Scroll>
 
         {/* HTML Bootstrap elements */}
