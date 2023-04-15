@@ -230,13 +230,14 @@ function App() {
                 width: "100%",
                 height: "100vh",
                 padding: "0px 30px",
-                top: "500vh",
+                top: "400vh",
               }}
             >
               <Col xs={6}>
                 <div>
                   <h1 style={{ marginBottom: "0px" }}>
-                    When you're done, say thank you and let your flowers go
+                    Just appreciate them like how they appreciated your care for
+                    them
                   </h1>
                 </div>
               </Col>
@@ -248,14 +249,13 @@ function App() {
                 width: "100%",
                 height: "100vh",
                 padding: "0px 30px",
-                top: "400vh",
+                top: "500vh",
               }}
             >
               <Col xs={6}>
                 <div>
                   <h1 style={{ marginBottom: "0px" }}>
-                    Just appreciate them like how they appreciated your care for
-                    them
+                    When you're done, say thank you and let your flowers go
                   </h1>
                 </div>
               </Col>
