@@ -1,4 +1,5 @@
 import "./App.css";
+import Sound from "./sounds/Snowfall Butterflies - Asher Fulero.mp3";
 import {
   ScrollControls,
   Scroll,
@@ -39,7 +40,7 @@ function App() {
         <Scroll>
           {/* top */}
           <Float
-            speed={0.2} // Animation speed, defaults to 1
+            speed={0.5} // Animation speed, defaults to 1
             rotationIntensity={2} // XYZ rotation intensity, defaults to 1
             floatIntensity={0.2} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
             floatingRange={[1, 1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
@@ -47,7 +48,7 @@ function App() {
             <FlowerBloom scale={0.4} position={[-2, -2, 1]} />
             <FlowerBloom scale={0.5} position={[6, 0, -2]} />
             <FlowerBloom scale={0.3} position={[2, -5, 0]} />
-            <FlowerBloom scale={0.6} position={[-8, -8, -4]} />
+            <FlowerBloom scale={0.6} position={[-9, -8, -4]} />
             <FlowerBloom scale={0.5} position={[0, -13, -4]} />
             {/* <Flower scale={5} position={[-5, -9, -1]} /> */}
             {/* <Lavender scale={0.5} position={[6, -4, -2]} /> */}
@@ -57,7 +58,7 @@ function App() {
 
           {/* middle */}
           <Float
-            speed={0.2}
+            speed={0.3}
             rotationIntensity={0.5}
             floatIntensity={0.2}
             floatingRange={[0.1, 0.11]} // R
