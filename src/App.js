@@ -45,7 +45,7 @@ function App() {
       </EffectComposer>
 
       {/* REACT THREE DREI */}
-      <ScrollControls pages={6} damping={0.25}>
+      <ScrollControls pages={7} damping={0.25}>
         {/* canvas elements */}
         <Scroll>
           {/* top */}
@@ -248,7 +248,7 @@ function App() {
                 position: "absolute",
                 width: "100%",
                 height: "100vh",
-                padding: "0px 30px",
+                padding: "0px 30px 0px",
                 top: "500vh",
               }}
             >
