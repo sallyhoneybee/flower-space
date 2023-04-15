@@ -72,8 +72,3 @@ select {
     scroll-behavior: auto !important;
   }
 }
-
-header img {
-  height: 100px;
-  width: 100px
-}
