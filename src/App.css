@@ -69,3 +69,14 @@ p {
   font-size: 18px;
   line-height: 1.8em;
 }
+
+@media(max-width: 500px) {
+  h1 {
+    font-size: 30px !important;
+  }
+
+  header img {
+    height: auto;
+    width: 40px;
+  }
+}

@@ -55,11 +55,19 @@ function App() {
             floatIntensity={0.5} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
             floatingRange={[1, 1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
           >
-            <FlowerBloom scale={0.4} position={[-2, -2, 1]} />
-            <FlowerBloom scale={0.5} position={[6, 0, -2]} />
-            <FlowerBloom scale={0.3} position={[2, -5, 0]} />
-            <FlowerBloom scale={0.6} position={[-9, -8, -4]} />
-            <FlowerBloom scale={0.5} position={[0, -13, -4]} />
+            <FlowerBloom className="model" scale={0.4} position={[-2, -2, 1]} />
+            <FlowerBloom className="model" scale={0.5} position={[4, 0, -2]} />
+            <FlowerBloom className="model" scale={0.3} position={[2, -5, 0]} />
+            <FlowerBloom
+              className="model"
+              scale={0.6}
+              position={[-11, -8, -4]}
+            />
+            <FlowerBloom
+              className="model"
+              scale={0.5}
+              position={[-4, -13, -4]}
+            />
             {/* <Flower scale={5} position={[-5, -9, -1]} /> */}
             {/* <Lavender scale={0.5} position={[6, -4, -2]} /> */}
             {/* <Butterfly scale={0.01} position={[-2, 0, 2]} /> */}
@@ -73,8 +81,12 @@ function App() {
             floatIntensity={0.2}
             floatingRange={[0.1, 0.11]} // R
           >
-            <Lavender scale={0.8} position={[-7, -26.5, -2]} />
-            <Lavender scale={1} position={[4, -21, -2]} />
+            <Lavender
+              className="model"
+              scale={0.8}
+              position={[-6, -26.5, -2]}
+            />
+            <Lavender className="model" scale={1} position={[2, -21, -2]} />
           </Float>
           {/* middle */}
 
