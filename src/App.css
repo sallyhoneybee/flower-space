@@ -12,10 +12,6 @@ html, body, #root {
   user-select: none;
 }
 
-/* body {
-  background-color: black;
-} */
-
 header {
   background: transparent;
   display: flex;
@@ -54,7 +50,7 @@ header img {
 
 h1,h2,h3,h4,h5 {
   font-family: 'Italiana', serif;
-  color: #fff;
+  color: #000000;
   margin-bottom: 32px !important;
 }
 
@@ -68,7 +64,7 @@ h2 {
 
 p {
   font-family: 'Roboto', sans-serif;
-  color: #fff;
+  color: #000000;
   font-weight: 300;
   font-size: 18px;
   line-height: 1.8em;

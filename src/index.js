@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App";
 import logo from "./flower_logo.png";
 import { Canvas } from "@react-three/fiber";
-import { Html } from "@react-three/drei";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,9 +12,7 @@ root.render(
       <img src={logo} alt="" />
     </header>
     <Canvas>
-      <Html>
-        <App />
-      </Html>
+      <App />
     </Canvas>
   </React.StrictMode>
 );
