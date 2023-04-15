@@ -1,12 +1,17 @@
 import "./App.css";
-import { ScrollControls, Scroll, Environment, Float } from "@react-three/drei";
+import {
+  ScrollControls,
+  Scroll,
+  Environment,
+  Float,
+  Sparkles,
+} from "@react-three/drei";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Flower } from "./models/Flower";
 import { Lavender } from "./models/Lavender";
-import { Butterfly } from "./models/Butterfly";
 import { FlowerBloom } from "./models/FlowerBloom";
 import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
 
@@ -14,7 +19,7 @@ function App() {
   return (
     <>
       <color attach="background" args={["#ffffff"]}></color>
-      <ambientLight intensity={1.1} />
+      <ambientLight intensity={0.1} />
 
       <Environment preset="warehouse" />
 
@@ -34,19 +39,81 @@ function App() {
         <Scroll>
           {/* top */}
           <Float
-            speed={0.6} // Animation speed, defaults to 1
+            speed={0.2} // Animation speed, defaults to 1
             rotationIntensity={2} // XYZ rotation intensity, defaults to 1
             floatIntensity={0.2} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
             floatingRange={[1, 1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
           >
-            <FlowerBloom scale={0.5} position={[0, -2, 1]} />
-            <FlowerBloom scale={0.5} position={[6, -2, -2]} />
-            <FlowerBloom scale={0.5} position={[-8, 2, -6]} />
+            <FlowerBloom scale={0.4} position={[-2, -2, 1]} />
+            <FlowerBloom scale={0.5} position={[6, 0, -2]} />
+            <FlowerBloom scale={0.3} position={[2, -5, 0]} />
+            <FlowerBloom scale={0.6} position={[-8, -8, -4]} />
+            <FlowerBloom scale={0.5} position={[0, -13, -4]} />
             {/* <Flower scale={5} position={[-5, -9, -1]} /> */}
             {/* <Lavender scale={0.5} position={[6, -4, -2]} /> */}
             {/* <Butterfly scale={0.01} position={[-2, 0, 2]} /> */}
           </Float>
           {/* top */}
+
+          {/* middle */}
+          <Float
+            speed={0.2}
+            rotationIntensity={0.5}
+            floatIntensity={0.2}
+            floatingRange={[0.1, 0.11]} // R
+          >
+            <Lavender scale={0.8} position={[-7, -26.5, -2]} />
+            <Lavender scale={1} position={[4, -21, -2]} />
+          </Float>
+          {/* middle */}
+
+          {/* middle */}
+          <Float
+            speed={0.2}
+            rotationIntensity={2}
+            floatIntensity={0.2}
+            floatingRange={[0.5, 0.5]}
+          ></Float>
+          {/* middle */}
+
+          {/* middle */}
+          <Float
+            speed={0.2}
+            rotationIntensity={0.5}
+            floatIntensity={0.03}
+            floatingRange={[0.5, 0.5]}
+          >
+            <Flower scale={5} position={[1, -35, 0]} />
+          </Float>
+          {/* middle */}
+
+          {/* bottom */}
+          <Float
+            speed={0.2}
+            rotationIntensity={2}
+            floatIntensity={0.2}
+            floatingRange={[1, 1]}
+          ></Float>
+          {/* bottom */}
+
+          <Sparkles
+            noise={0}
+            count={200}
+            speed={0.1}
+            size={10}
+            color={"#FFDF68"}
+            opacity={1}
+            scale={[20, 100, 20]}
+          ></Sparkles>
+          <Sparkles
+            noise={0}
+            count={200}
+            speed={0.1}
+            size={10}
+            color={"#FFDF68"}
+            opacity={1}
+            scale={[30, 100, 20]}
+          ></Sparkles>
         </Scroll>
 
         {/* HTML Bootstrap elements */}

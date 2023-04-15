@@ -7,13 +7,15 @@ Source: https://sketchfab.com/3d-models/end-flower9-4be8021f30974c8e8a223b131a5f
 Title: End Flower9
 */
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function FlowerBloom(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('./models/flower_bloom/scene-transformed.glb')
   const { actions } = useAnimations(animations, group)
+
+
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">
