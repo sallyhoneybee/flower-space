@@ -1,20 +1,53 @@
 import "./App.css";
-import { ScrollControls, Scroll } from "@react-three/drei";
+import { ScrollControls, Scroll, Environment, Float } from "@react-three/drei";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
+import { Flower } from "./models/Flower";
+import { Lavender } from "./models/Lavender";
+import { Butterfly } from "./models/Butterfly";
+import { FlowerBloom } from "./models/FlowerBloom";
+import { EffectComposer, Bloom, Vignette } from "@react-three/postprocessing";
 
 function App() {
   return (
     <>
-      <color attach="background" args={["#FFFFFF"]}></color>
+      <color attach="background" args={["#ffffff"]}></color>
+      <ambientLight intensity={1.1} />
 
-      {/* RECT THREE DREI */}
+      <Environment preset="warehouse" />
+
+      <EffectComposer>
+        <Bloom
+          intensity={2}
+          luminanceThreshold={0.1}
+          luminanceSmoothing={0.5}
+          height={1000}
+        />
+        <Vignette eskil={false} offset={0.1} darkness={0.5} />
+      </EffectComposer>
+
+      {/* REACT THREE DREI */}
       <ScrollControls pages={6} damping={0.25}>
         {/* canvas elements */}
-        <Scroll></Scroll>
+        <Scroll>
+          {/* top */}
+          <Float
+            speed={0.6} // Animation speed, defaults to 1
+            rotationIntensity={2} // XYZ rotation intensity, defaults to 1
+            floatIntensity={0.2} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
+            floatingRange={[1, 1]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
+          >
+            <FlowerBloom scale={0.5} position={[0, -2, 1]} />
+            <FlowerBloom scale={0.5} position={[6, -2, -2]} />
+            <FlowerBloom scale={0.5} position={[-8, 2, -6]} />
+            {/* <Flower scale={5} position={[-5, -9, -1]} /> */}
+            {/* <Lavender scale={0.5} position={[6, -4, -2]} /> */}
+            {/* <Butterfly scale={0.01} position={[-2, 0, 2]} /> */}
+          </Float>
+          {/* top */}
+        </Scroll>
 
         {/* HTML Bootstrap elements */}
         <Scroll html style={{ width: "100%" }}>

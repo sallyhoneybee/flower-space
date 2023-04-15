@@ -12,7 +12,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function Flower(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/scene-transformed.glb')
+  const { nodes, materials, animations } = useGLTF('./models/flower/scene-transformed.glb')
   const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
@@ -75,4 +75,4 @@ export function Flower(props) {
   )
 }
 
-useGLTF.preload('/scene-transformed.glb')
+useGLTF.preload('./models/flower/scene-transformed.glb')
